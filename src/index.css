@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Food Delivery App Design System */
+
+@layer base {
+  :root {
+    /* Base Colors - Food Delivery Theme */
+    --background: 218 50% 98%;  /* #F5F8FC */
+    --foreground: 210 4% 28%;   /* #44474A */
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 4% 28%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 4% 28%;
+
+    /* Primary Blue */
+    --primary: 218 69% 54%;     /* #3A77D8 */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 218 54% 90%; /* #D5E2F5 */
+
+    /* Secondary & Accent */
+    --secondary: 218 54% 90%;   /* #D5E2F5 */
+    --secondary-foreground: 210 4% 28%;
+    
+    --accent: 45 95% 63%;       /* #FBCB43 */
+    --accent-foreground: 210 4% 28%;
+
+    /* Status Colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 45 95% 63%;      /* #FBCB43 */
+    --warning-foreground: 210 4% 28%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Neutral Colors */
+    --muted: 218 54% 90%;       /* #D5E2F5 */
+    --muted-foreground: 210 4% 45%;
+
+    --border: 218 54% 85%;
+    --input: 0 0% 100%;
+    --ring: 218 69% 54%;
+
+    /* Design System */
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(218 69% 54%), hsl(218 69% 64%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 95% 63%), hsl(45 95% 73%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(218 50% 98%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px hsl(218 69% 54% / 0.05);
+    --shadow-md: 0 4px 12px hsl(218 69% 54% / 0.1);
+    --shadow-lg: 0 8px 24px hsl(218 69% 54% / 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent to-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+
+  /* Card Variants */
+  .card-elevated {
+    @apply bg-card rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-border;
+  }
+
+  .card-restaurant {
+    @apply bg-gradient-to-br from-card to-secondary/30 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-border/50 hover:scale-[1.02];
+  }
+
+  .card-order {
+    @apply bg-card rounded-lg shadow-sm border border-border p-4 transition-all duration-300 hover:shadow-md;
+  }
+
+  /* Status Badges */
+  .status-pending {
+    @apply bg-warning/20 text-warning-foreground px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-confirmed {
+    @apply bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-preparing {
+    @apply bg-accent/20 text-accent-foreground px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-ready {
+    @apply bg-success/20 text-success-foreground px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-delivered {
+    @apply bg-success/30 text-success-foreground px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  /* Animations */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
